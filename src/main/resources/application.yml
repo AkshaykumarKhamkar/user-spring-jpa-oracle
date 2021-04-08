@@ -1,0 +1,17 @@
+## use create when running the app for the first time
+## then change to "update" which just updates the schema when necessary
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: SYSTEM
+    password: SYSTEM
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  ## this shows the sql actions in the terminal logs
+    show-sql: true
+  ##optional, but just in case another application is listening on your default  port (8080)
+server:
+  port: 8034
